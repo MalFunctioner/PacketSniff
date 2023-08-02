@@ -14,10 +14,10 @@ def parse_ip_header(data):
     return version, ihl, ttl, protocol, src_ip, dest_ip, data[ihl*4:]
 
 def main():
-    # Disable output buffering
+    
     sys.stdout.flush()
 
-    # Create a raw socket to capture packets (For Windows, use AF_INET and SOCK_RAW)
+
     sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
     interface_ip = find_interface_ip()
 
